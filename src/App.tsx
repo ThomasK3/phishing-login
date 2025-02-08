@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './pages/Login.tsx'
+import Login from './pages/Login.tsx';
 
 function App() {
   return (
