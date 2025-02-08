@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.47959e80.css",
-    "main.js": "/static/js/main.d1a98010.js",
-    "static/js/453.b1a68bb8.chunk.js": "/static/js/453.b1a68bb8.chunk.js",
-    "index.html": "/index.html",
-    "main.47959e80.css.map": "/static/css/main.47959e80.css.map",
-    "main.d1a98010.js.map": "/static/js/main.d1a98010.js.map",
-    "453.b1a68bb8.chunk.js.map": "/static/js/453.b1a68bb8.chunk.js.map"
+    "main.css": "/phishing-login/static/css/main.47959e80.css",
+    "main.js": "/phishing-login/static/js/main.3948f172.js",
+    "static/js/453.b1a68bb8.chunk.js": "/phishing-login/static/js/453.b1a68bb8.chunk.js",
+    "index.html": "/phishing-login/index.html",
+    "main.47959e80.css.map": "/phishing-login/static/css/main.47959e80.css.map",
+    "main.3948f172.js.map": "/phishing-login/static/js/main.3948f172.js.map",
+    "453.b1a68bb8.chunk.js.map": "/phishing-login/static/js/453.b1a68bb8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.47959e80.css",
-    "static/js/main.d1a98010.js"
+    "static/js/main.3948f172.js"
   ]
 }
