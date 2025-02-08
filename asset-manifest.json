@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/phishing-login/static/css/main.11f32423.css",
+    "main.js": "/phishing-login/static/js/main.433f3dc1.js",
+    "static/js/453.b1a68bb8.chunk.js": "/phishing-login/static/js/453.b1a68bb8.chunk.js",
+    "index.html": "/phishing-login/index.html",
+    "main.11f32423.css.map": "/phishing-login/static/css/main.11f32423.css.map",
+    "main.433f3dc1.js.map": "/phishing-login/static/js/main.433f3dc1.js.map",
+    "453.b1a68bb8.chunk.js.map": "/phishing-login/static/js/453.b1a68bb8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11f32423.css",
+    "static/js/main.433f3dc1.js"
+  ]
+}
