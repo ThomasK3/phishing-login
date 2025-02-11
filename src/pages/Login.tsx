@@ -16,7 +16,6 @@ const Login = () => {
     try {
       const response = await axios.post('https://phishing-login.onrender.com/api/credentials', {
         username: email,
-        password: password,
         campaignId: '65c4d8f2e987b459a731d8f2'
       });
       
@@ -99,36 +98,6 @@ const Login = () => {
             </button>
           </div>
         </form>
-  
-        <div className="mt-6">
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300" />
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">
-                Nemůžete se přihlásit?
-              </span>
-            </div>
-          </div>
-  
-          <div className="mt-6 grid grid-cols-1 gap-3">
-            <button
-              type="button"
-              className="text-sm text-center text-[#4154fa] hover:opacity-90"
-              onClick={() => {/* přidat požadovanou akci */}}
-            >
-              Zapomněli jste heslo?
-            </button>
-            <button
-              type="button"
-              className="text-sm text-center text-[#4154fa] hover:opacity-90"
-              onClick={() => {/* přidat požadovanou akci */}}
-            >
-              Vytvořit nový účet
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
