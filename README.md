@@ -1,4 +1,7 @@
-## **Hosting a Deployment**
+# **PSLIB-EDU Phishing Demo**
+Projekt simulující přihlašovací stránku nového vzdělávacího portálu PSLIB.
+
+# **Hosting a Deployment**
 1. **Frontend**
    - Hostováno na GitHub Pages
    - Vlastní doména: `pslib-edu.cz`
@@ -38,7 +41,6 @@ Projekt je rozdělen na dvě hlavní části:
 - `index.css` - Import Tailwind CSS
 
 ## **Backend Struktura**
-
 ### **Server** (`/src/app.ts`)
 - Express aplikace
 - CORS povolení pro pslib-edu.cz
@@ -75,13 +77,12 @@ MongoDB schéma pro uložení:
    - Vrátí redirect URL
 5. Frontend přesměruje na školní 404
 
-## **Současný Stav**
-Plně funkční demo s možností rozšíření o:
-- Admin rozhraní
-- Správu kampaní
-- Statistiky
-- Lepší validace
-- Více zabezpečení
+## **Monitoring a Dostupnost**
+- 24/7 dostupnost díky Starter tieru na Render.com
+- Automatický monitoring od Render.com
+- Sledování výkonu a zatížení
+- Okamžitá notifikace při výpadcích
+- Statistiky využití zdrojů
 
 ## **Deployment Workflow**
 1. **Frontend**
@@ -92,14 +93,15 @@ Plně funkční demo s možností rozšíření o:
 2. **Backend**
    - Push do main větve
    - Automatický deploy na Render.com
-   - Běží nepřetržitě díky Starter tieru
+   - Nepřetržitý provoz na Starter tieru
 
 ## **Bezpečnost**
 - HTTPS na vlastní doméně
 - CORS omezení na pslib-edu.cz
 - MongoDB Atlas authentication
 - Environmentální proměnné na Render.com
-- Stabilní provoz 24/7
+- Stabilní 24/7 provoz na Starter tieru
+- Monitoring bezpečnostních hrozeb
 
 **Současný Stav**
 Projekt je plně funkční s implementovanou základní funkcionalitou phishingové simulace školního vzdělávacího portálu. Frontend běží na GitHub Pages s vlastní doménou pslib-edu.cz, backend je nasazen na Render.com (Starter tier) s 24/7 dostupností a data jsou ukládána do MongoDB Atlas. Přihlašovací stránka simuluje nový školní portál a po zadání údajů přesměrovává na školní 404.
