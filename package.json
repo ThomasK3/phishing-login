@@ -19,16 +19,18 @@
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "semver": "^7.7.1",
+    "sonner": "^1.7.4",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
+"scripts": {
+    "dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-  },
+},
   "eslintConfig": {
     "extends": [
       "react-app",
