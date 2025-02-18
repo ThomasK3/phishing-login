@@ -5,17 +5,14 @@ const passwordSchema = new mongoose.Schema({
     type: String, 
     required: true 
   },
-  password: { 
-    type: String, 
-    required: true 
-  },
-  timestamp: { 
-    type: Date, 
-    default: Date.now 
+  password: {
+    type: String,
+    required: true
   },
   credential: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Credential'
+    ref: 'Credential',
+    required: true
   }
 });
 

