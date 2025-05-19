@@ -7,7 +7,7 @@ const passwordSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true
+    required: false
   },
   credential: {
     type: mongoose.Schema.Types.ObjectId,
